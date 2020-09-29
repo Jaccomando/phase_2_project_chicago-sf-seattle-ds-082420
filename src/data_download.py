@@ -97,7 +97,7 @@ def get_res_bldg_table():
     csv_name = 'EXTR_ResBldg.csv'
     zip_file = download_zipfile(res_bldg_url)
     csv_as_text = open_csv_from_zip(zip_file, csv_name)
-    rp_sale_table = pd.read_csv(csv_as_text, encoding = 'ISO-9959-1')
+    rp_sale_table = pd.read_csv(csv_as_text, encoding = 'ISO-8859-1')
     return rp_sale_table
 
 def get_rp_sale_table():
