@@ -119,3 +119,34 @@ def get_dataframes():
         "lookup": get_lookup_table(),
     }
     return dataframes_dict
+
+def tt_ind(sample1, sample2, alpha = .05, equal_var = True, tails = 2):
+    """
+    Takes 2 array-like objects, sample1 and sample 2: samples to test for difference
+    and 1 float: the level of confidence, alpha (default .05)
+    and 1 bool: whether samples have equal variances (default True)
+    and a number of tails: 1 or 2 (default 2)
+    performs two sample t-test and prints critical stat, test stat, and one-tailed pvalue
+    """
+    import scipy.stats as stats
+
+    tcrit = stats.t.ppf(q=.05, df = len(sample1) + len(sample2)-1)
+    tstat = stats.ttest_ind(sample1, sample2, equal_var = equal_var)
+    if tails == 1:
+        print(f'critical stat is {tcrit}, test stat is {tstat[0]} with a pvalue of {tstat[1]/2}')
+    elif tails == 2:
+        print(f'critical stat is {tcrit}, test stat is {tstat[0]} with a pvalue of {tstat[1]}')
+    else:
+        print('Please set tails to either 1 or 2')
+
+
+def cohen_d(sample1, sample2):
+    """
+    Takes 2 array-like objects: samples to compare
+    Returns a float: the standard effect size according to the Cohen D equation.
+    """
+    import numpy as np
+    effect_size = (sample1.mean() - sample2.mean()) / np.sqrt(((len(sample1) -1) * sample1.var()
+                                                         + len(sample2) -1 * sample2.var()
+                                                          / len(sample1) + len(sample2) -2))
+    return effect_size
