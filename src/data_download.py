@@ -20,7 +20,7 @@ def get_tables(dictionary):
     residences = dictionary['parcel']
 
     sales = sales[sales['DocumentDate'].astype(str).str.endswith('2019')]
-    sales = sales[(sales['SalePrice'] > 120000) & (sales['SalePrice'] < 3000000)]
+    sales = sales[(sales['SalePrice'] > 200000) & (sales['SalePrice'] < 1500000)]
     combo = sales.merge(residences, on = ['Major','Minor'])
     combo = combo.merge(parcels, on = ['Major','Minor'])
     combo = combo[combo['BldgGrade'] > 1]
