@@ -14,28 +14,6 @@ from sklearn.feature_selection import RFE
 from statsmodels.regression.linear_model import GLS
 
 
-def produce_model(data, target):
-    '''
-    takes data as a dataframe of predictors with a target, takes target as a string equal to the column name
-    of the target in data.
-    returns the model generated from smf.ols().fit()
-    '''
-    preds = f'{target} ~ ' + str(data.loc[ : , data.columns != target].columns[0])
-    for pred in data.loc[ : , data.columns != target].columns[1:]:
-        preds = preds + f' + {pred}'
-    formula = preds
-
-    model = smf.ols(preds, data).fit()
-    return model
-
-def make_heatmap(data):
-    mask = np.triu(np.ones_like(data.corr(), dtype=np.bool))
-    fig, ax = plt.subplots(figsize = (15,10))
-    plt.xticks(fontsize = 10)
-    plt.yticks(fontsize = 10)
-    sns.heatmap(data.corr(), mask= mask, ax= ax, cmap = 'viridis')
-    return ax
-
 def get_tables(dictionary):
     
     """
@@ -70,7 +48,7 @@ def get_tables(dictionary):
                   'FpMultiStory','FpFreestanding','FpAdditional','YrBuilt','YrRenovated','Condition',
                   'AddnlCost','SqFtLot','MtRainier','Olympics','Cascades','Territorial','SeattleSkyline',
                    'PugetSound','LakeWashington','LakeSammamish','SmallLakeRiverCreek','OtherView',
-                  'WfntFootage','LotDepthFactor','TrafficNoise']
+                  'WfntFootage','LotDepthFactor','TrafficNoise', 'Address']
 
     categorycols = ['SaleReason', 'PropertyClass','HeatSystem','HeatSource','PresentUse','HBUAsIfVacant',
                    'HBUAsImproved','WaterSystem','SewerSystem','Access','InadequateParking','StreetSurface',
