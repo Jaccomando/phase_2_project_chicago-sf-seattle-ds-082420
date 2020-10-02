@@ -2,7 +2,17 @@ from io import BytesIO, TextIOWrapper, StringIO
 from zipfile import ZipFile
 import pandas as pd
 import requests
-import pandas as pd
+import numpy as np
+import scipy
+import seaborn as sns
+import matplotlib.pyplot as plt
+import statsmodels.api as sm
+import statsmodels.formula.api as smf
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LinearRegression
+from sklearn.feature_selection import RFE
+from statsmodels.regression.linear_model import GLS
+
 
 def get_tables(dictionary):
     
@@ -20,7 +30,7 @@ def get_tables(dictionary):
     residences = dictionary['parcel']
 
     sales = sales[sales['DocumentDate'].astype(str).str.endswith('2019')]
-    sales = sales[(sales['SalePrice'] > 120000) & (sales['SalePrice'] < 3000000)]
+    sales = sales[(sales['SalePrice'] > 200000) & (sales['SalePrice'] < 1500000)]
     combo = sales.merge(residences, on = ['Major','Minor'])
     combo = combo.merge(parcels, on = ['Major','Minor'])
     combo = combo[combo['BldgGrade'] > 1]
@@ -38,7 +48,7 @@ def get_tables(dictionary):
                   'FpMultiStory','FpFreestanding','FpAdditional','YrBuilt','YrRenovated','Condition',
                   'AddnlCost','SqFtLot','MtRainier','Olympics','Cascades','Territorial','SeattleSkyline',
                    'PugetSound','LakeWashington','LakeSammamish','SmallLakeRiverCreek','OtherView',
-                  'WfntFootage','LotDepthFactor','TrafficNoise']
+                  'WfntFootage','LotDepthFactor','TrafficNoise', 'Address']
 
     categorycols = ['SaleReason', 'PropertyClass','HeatSystem','HeatSource','PresentUse','HBUAsIfVacant',
                    'HBUAsImproved','WaterSystem','SewerSystem','Access','InadequateParking','StreetSurface',
@@ -97,7 +107,7 @@ def get_res_bldg_table():
     csv_name = 'EXTR_ResBldg.csv'
     zip_file = download_zipfile(res_bldg_url)
     csv_as_text = open_csv_from_zip(zip_file, csv_name)
-    rp_sale_table = pd.read_csv(csv_as_text, encoding = 'ISO-9959-1')
+    rp_sale_table = pd.read_csv(csv_as_text, encoding = 'ISO-8859-1')
     return rp_sale_table
 
 def get_rp_sale_table():
