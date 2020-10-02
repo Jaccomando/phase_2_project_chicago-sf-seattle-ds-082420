@@ -2,7 +2,17 @@ from io import BytesIO, TextIOWrapper, StringIO
 from zipfile import ZipFile
 import pandas as pd
 import requests
-import pandas as pd
+import numpy as np
+import scipy
+import seaborn as sns
+import matplotlib.pyplot as plt
+import statsmodels.api as sm
+import statsmodels.formula.api as smf
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LinearRegression
+from sklearn.feature_selection import RFE
+from statsmodels.regression.linear_model import GLS
+
 
 def get_tables(dictionary):
     
@@ -38,7 +48,7 @@ def get_tables(dictionary):
                   'FpMultiStory','FpFreestanding','FpAdditional','YrBuilt','YrRenovated','Condition',
                   'AddnlCost','SqFtLot','MtRainier','Olympics','Cascades','Territorial','SeattleSkyline',
                    'PugetSound','LakeWashington','LakeSammamish','SmallLakeRiverCreek','OtherView',
-                  'WfntFootage','LotDepthFactor','TrafficNoise']
+                  'WfntFootage','LotDepthFactor','TrafficNoise', 'Address']
 
     categorycols = ['SaleReason', 'PropertyClass','HeatSystem','HeatSource','PresentUse','HBUAsIfVacant',
                    'HBUAsImproved','WaterSystem','SewerSystem','Access','InadequateParking','StreetSurface',
