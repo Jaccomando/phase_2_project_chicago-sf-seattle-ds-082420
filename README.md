@@ -38,3 +38,5 @@ On average, duplexes sell for 36.315156370763475.
 A quick glace at the sample means seems to indicate that, in fact, duplexes sell for about //$36 more per square foot than single family homes. 
 We conducted a two sample, one-tailed Welch's test to determine the statistical significance of the difference in means. Our test confirmed that we can be confident that duplexes sell for more per square foot than single family homes and that the difference is statistically significant.
 
+## test
+
