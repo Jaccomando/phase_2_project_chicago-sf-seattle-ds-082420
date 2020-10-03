@@ -1,1 +1,13 @@
-I'm not sure if we should fill in this readme as we complete deliverables or if it would be better just to document our work in our own notebooks and then compile that documentation into this readme at the end of the project. My group waited till the last second to make our readme and we ended up with a really lame readme file. Josh maybe you have more insight on how to go about handling the readme file?
+## Table of Contents
+---
+### Notebooks
+  This folder contains notebooks with exploratory data analyses.
+
+### Reports
+  This folder contains finalized notebooks, a slideshow presentation, and images used in the finalized presentation of the data.
+  
+### References
+  This folder conatains all relevant information uesd to create our finalized reports including the .csv files containing the data tables,       lookup docs for the tables themselves, and any documented informative references.
+
+### [SRC](https://github.com/Jaccomando/phase_2_project_chicago-sf-seattle-ds-082420/tree/master/src)  
+  This folder includes code for all functions in the notebooks.
