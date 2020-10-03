@@ -1,6 +1,6 @@
 # King County, WA Home Improvement Project
 
-This project analyzes King County, WA home sales data to help home owners in King County determine which home improvement projects will increase the sale price of their homes. It uses data from 2019 home sales and makes recommendations on which home improvement projects provide the best return on investment (ROI).
+This project analyzes King County, WA home sales data to help home owners in King County determine which home improvement projects will increase the sale price of their homes.
 
 
 ## Background
@@ -37,6 +37,4 @@ On average, duplexes sell for 36.315156370763475.
 
 A quick glace at the sample means seems to indicate that, in fact, duplexes sell for about //$36 more per square foot than single family homes. 
 We conducted a two sample, one-tailed Welch's test to determine the statistical significance of the difference in means. Our test confirmed that we can be confident that duplexes sell for more per square foot than single family homes and that the difference is statistically significant.
-
-## test
 
