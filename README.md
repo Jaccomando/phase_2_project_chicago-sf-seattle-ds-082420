@@ -45,4 +45,6 @@ Model 1 was heteroskedastic because the residuals were not randomly distributed 
 
 We can definately improve upon this model!
 
+**Model 2:** For Model 2 we used SciKitLearn's iterative algorithms to help us find the best features for our model. REFCV chooses both the best features based upon a recursive feature elimination method, as well as choosing the number of features to include.  Our R2 score improved to .459 and our condition number dropped to more acceptable levels. As with Model 1, we conducted additional assumption tests.
 
+Model 2 still failed Homoskedasticity by over estimating the value of lower value houses and under estimating the values of higher priced houses. It passed the linear rainbow test and is making linear predictions of the sale price vs the predictors. It violated the normality assumption as errors are not normally distributed. Our model did much better avoiding multi-collinearity, however some variables still had values over 5.
