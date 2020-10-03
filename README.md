@@ -41,7 +41,7 @@ We conducted a two sample, one-tailed Welch's test to determine the statistical 
 ## Multiple Regression Models
 Model 1: Choosing the features to include was the most important part of building this model. We tried using the ordinal features that directly correlated best with the sale price of the home. After running or model we saw that it had some predictive power with an R2 of .452, but suffered from sever multicollinearity with a condition number of almost 30,000. Furthermore we conducted additional assumption testing including Homoskedasticity, Linearity, Normality and Independence (collinearity).
 
-**Model** 1 was heteroskedastic because the residuals were not randomly distributed when plotted against our predicted sale prices. It passed the linear rainbow test for linearity by soundly rejecting the null hypothesis of non-linearity. It violated the normality assumption since the actual sample quantiles did not neatly map to the predicted quantiles. And it violated the assumption of independance indicating much collinearity between variables.
+**Model 1** was heteroskedastic because the residuals were not randomly distributed when plotted against our predicted sale prices. It passed the linear rainbow test for linearity by soundly rejecting the null hypothesis of non-linearity. It violated the normality assumption since the actual sample quantiles did not neatly map to the predicted quantiles. And it violated the assumption of independance indicating much collinearity between variables.
 
 We can definately improve upon this model!
 
