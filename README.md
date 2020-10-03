@@ -23,33 +23,18 @@ We also included a statistical test to determine whether converting a home into 
 The data is downloaded with the get_dataframes() function. The get_tables function filters the data into the subset we want to study, and divides the features into features represented by continuous or ordinal values, ordtable and those that represent different categories of data, cattable.
 
 ### Do Duplexes Sell for Less per Square Foot than Single Family Homes?
-Let's start with by answering this question with a T-Test.
+We started by answering this question with a T-Test.
 
-Note, this dataset is not the same as for our multiple regression model.
-We have included duplexes in this test, which are not present in the data for our regression model. Otherwise the price ranges and year sold are the same.
+First we stated our null and alternative hypotheses, identified type 1 and type 2 errors, and set our alpha to .95
 
-Hypotheses
-Our null hypothesis is that duplexes do not sell for more per square foot than single family homes. Our alternative hypothesis is that they do sell for more than single family homes.
+Next we filtered the data for the subset we wanted to explore and joined the tables and extracted the features we wanted to compare.
 
-We will try to get results with a 95% confidence, so we will set our alpha to .95
-
-Possible Errors:
-If we make a type 1 error, we would claim that duplexes sell for more per square foot, when in reality they do not.
-On the other hand, if we make a type 2 error, we would claim that they do not sell for more, when in fact they do.
-
-First we filter the data for subset we want to explore. Next we join the tables and extract the features we want to compare.
-### Single family vs duplex: sample size and sample means
 In 2019 243 duplexes were sold, and 22804 single family homes were sold.
-The mean cost per sqft of our samples for duplexes is 384.7626045951853
-The mean cost per sqft of our samples for single family homes is 348.4474482244218
-On average, duplexes sell for 36.315156370763475
+The mean cost per sqft of our samples for duplexes is 384.7626045951853.
+The mean cost per sqft of our samples for single family homes is 348.4474482244218.
+On average, duplexes sell for 36.315156370763475.
 
 
-
-A quick glace at the sample means seems to indicate that, in fact, duplexes sell for about //$36 more per square foot than single family homes. Let's test whether this difference is statistically significant, especially since our sample size of duplexes is much smaller than for single family homes.
-
-Testing for statistical significance
-We will be using a two sample, one-tailed Welch's test to determine the statistical significance of the difference in means. Our T-critical value tells us that we need a test statistic above 1.645 to confirm with 95% confidence that duplexes sell for more per square foot than single family homes. We are looking for a pvalue of .05 or less to confirm our result.
-
-In fact, our test returns a test statistic of ~ 2.07 and our p-value is ~ .02. We can be confident that duplexes sell for more per square foot than single family homes and that the difference is statistically significant
+A quick glace at the sample means seems to indicate that, in fact, duplexes sell for about //$36 more per square foot than single family homes. 
+We conducted a two sample, one-tailed Welch's test to determine the statistical significance of the difference in means. Our test confirmed that we can be confident that duplexes sell for more per square foot than single family homes and that the difference is statistically significant.
 
