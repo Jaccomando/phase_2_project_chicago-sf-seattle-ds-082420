@@ -1,1 +1,3 @@
-I'm not sure if we should fill in this readme as we complete deliverables or if it would be better just to document our work in our own notebooks and then compile that documentation into this readme at the end of the project. My group waited till the last second to make our readme and we ended up with a really lame readme file. Josh maybe you have more insight on how to go about handling the readme file?
+# King County, WA Home Improvement Project
+
+This project analyzes King County, WA home sales data to help home owners in King County determine which home improvement projects will increase the sale price of their homes. It uses data from 2019 home sales and makes recommendations on which home improvement projects provide the best return on investment (ROI).
