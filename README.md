@@ -28,7 +28,8 @@ We start by answering this question with a T-Test.
 First we state our null and alternative hypotheses, identify type 1 and type 2 errors, and set our alpha to .95.
 
 Next we filter the data for the subset we want to explore and join the tables and extract the features we want to compare.
-
+ *insert image from Josh's final notebook in the Single family vs duplex: sample size and sample means section*
+ 
 In 2019 243 duplexes were sold, and 22804 single family homes were sold.
 The mean cost per sqft of our samples for duplexes is 384.7626045951853.
 The mean cost per sqft of our samples for single family homes is 348.4474482244218.
