@@ -4,17 +4,20 @@ This project analyzes King County, WA home sales data to help home owners in Kin
 
 ## Directory Structure
 
-### Notebooks
-This folder contains notebooks with exploratory data analyses.
+### [Notebooks](https://github.com/Jaccomando/phase_2_project_chicago-sf-seattle-ds-082420/tree/master/notebooks)
+This folder contains jupyter notebooks with exploratory data analyses and our final report notebook.
 
-### Reports
-This folder contains finalized notebooks, a slideshow presentation, and images used in the finalized presentation of the data.
+### [Reports](https://github.com/Jaccomando/phase_2_project_chicago-sf-seattle-ds-082420/tree/master/reports)
+This folder contains a pdf of our slideshow presentation, and images used in the finalized presentation of the data.
   
-### References
-This folder conatains all relevant information uesd to create our finalized reports including the .csv files containing the data tables, lookup docs for the tables themselves, and any documented informative references.
+### [References](https://github.com/Jaccomando/phase_2_project_chicago-sf-seattle-ds-082420/tree/master/refrences)
+This folder conatains all relevant documentation for the data we used, and any documented informative references.
 
 ### [SRC](https://github.com/Jaccomando/phase_2_project_chicago-sf-seattle-ds-082420/tree/master/src)  
 This folder includes code for all functions in the notebooks.
+
+### [Instructions](https://github.com/Jaccomando/phase_2_project_chicago-sf-seattle-ds-082420/tree/master/instructions)
+This folder contains the instructions and requirments for this project.
 
 ## Background
 We set out to generate a multiple regression model to predict the effect of different improvements to homes on their sale value using the set of homes sold in 2019 in King County.
