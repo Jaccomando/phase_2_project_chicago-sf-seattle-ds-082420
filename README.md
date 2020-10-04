@@ -1,5 +1,5 @@
 ## Table of Contents
----
+
 ### Notebooks
   This folder contains notebooks with exploratory data analyses.
 
@@ -11,3 +11,10 @@
 
 ### [SRC](https://github.com/Jaccomando/phase_2_project_chicago-sf-seattle-ds-082420/tree/master/src)  
   This folder includes code for all functions in the notebooks.
+
+
+## Evaluation
+
+
+## Deployment
+For the deployment of this model we have decided to create an app that allows the user to created a facsimile of their home 
