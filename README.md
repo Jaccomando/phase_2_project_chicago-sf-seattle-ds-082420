@@ -44,6 +44,7 @@ We start by answering this question with a T-Test.
 First we state our null and alternative hypotheses, identify type 1 and type 2 errors, and set our alpha to .95.
 
 Next we filter the data for the subset we want to explore and join the tables and extract the features we want to compare.
+
 ![duplex vs single family](https://github.com/Jaccomando/phase_2_project_chicago-sf-seattle-ds-082420/blob/master/reports/figures/duplex_v_single_family.png?raw=true)
  
 In 2019 243 duplexes were sold, and 22804 single family homes were sold.
