@@ -46,7 +46,6 @@ def homoskedasticity_test(model):
     '''
     y_hat = model.predict()
     fig = sns.scatterplot(x = y_hat, y = model.resid)
-    plt.savefig('homoskedasticity_test')
     plt.show()
 
 def rainbow_stats(model):
@@ -61,7 +60,6 @@ def normality_graph(model):
     given a regression model, this function prints a normality graph to notebook output
     '''
     fig = sm.graphics.qqplot(model.resid, dist = scipy.stats.norm, line = '45', fit=True)
-    plt.savefig('normality_graph')
     plt.show()
 
 def colinearity_testing(predictors):

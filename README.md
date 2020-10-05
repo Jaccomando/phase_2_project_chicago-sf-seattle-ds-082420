@@ -22,6 +22,10 @@ This folder contains the instructions and requirments for this project.
 ## Background
 We set out to generate a multiple regression model to predict the effect of different improvements to homes on their sale value using the set of homes sold in 2019 in King County.
 
+## Data Gathering
+
+The data is downloaded with the get_dataframes() function. The get_tables function filters the data into the subset we want to study, and divides the features into features represented by continuous or ordinal values, ordtable and those that represent different categories of data, cattable.
+
 ## Data
 We used data from the King County Assessor's free data catalog.
 
@@ -34,9 +38,7 @@ We selected this range of home values because they are affordable to people earn
 
 We also included a statistical test to determine whether converting a home into a duplex might increase the value per square foot. This would be helpful for homeowners to determine, depending on the size of their home, whether this renovation would be worth the cost.
 
-## Data Gathering
-
-The data is downloaded with the get_dataframes() function. The get_tables function filters the data into the subset we want to study, and divides the features into features represented by continuous or ordinal values, ordtable and those that represent different categories of data, cattable.
+![sales distribution](https://github.com/Jaccomando/phase_2_project_chicago-sf-seattle-ds-082420/blob/master/reports/figures/Sales_distribution.png?raw=true)
 
 ### Do Duplexes Sell for Less per Square Foot than Single Family Homes?
 We start by answering this question with a T-Test.
@@ -68,6 +70,10 @@ We can definitely improve upon this model!
 Model 2 still fails Homoskedasticity by over estimating the value of lower value houses and under estimating the values of higher priced houses. It passes the linear rainbow test and is making linear predictions of the sale price vs the predictors. It violates the normality assumption as errors are not normally distributed. Our model does much better avoiding multi-collinearity, however some variables still have values over 5.
 
 **Model 3:** For Model 3 we decide to assist REFCV by removing some features from consideration. We also suspect that some of the categorical variables from cattable may be predictive, so we let RFECV choose from a select set of those as well. Model 3 increases the R2 score to .464, and keeps the condition number low. It chooses 35 features to include and each one has a low p-value, and therefore a high degree of confidence in the significance of it's influence on the target. It's the best model yet, and the one we will keep! 
+
+![homoskedasticity test](https://github.com/Jaccomando/phase_2_project_chicago-sf-seattle-ds-082420/blob/master/reports/figures/homoskedasticity_test.png?raw=true)
+
+![normality graph](https://github.com/Jaccomando/phase_2_project_chicago-sf-seattle-ds-082420/blob/master/reports/figures/normality_graph.png?raw=true)
 
 Model 3 passes the linear rainbow test for linearity with flying colors by soundly rejecting the null hypothesis of non-linearity. Our model does not violate the indepedence assumption. Our condition score is low, suggesting low multi-collinearity between features. The variance inflaction test showed that no feature scores above a 5 which confirms that our features are independent.
 
